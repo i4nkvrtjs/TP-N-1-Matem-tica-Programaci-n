@@ -8,6 +8,8 @@ def _or(a, b):
     return result
 
 def _nand(a, b):
+    #Multiplicación hace lo mismo que la operación AND
+    #Luego 1 - (a * b) invierte el resultado: si el resultado es 1, será 0. Si es 0, será 1
     return 1 - (a * b)
 
 def generador_de_tabla_de_verdad(operacion):
