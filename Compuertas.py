@@ -7,6 +7,9 @@ def _or(a, b):
         result = result//2          #dividimos por 2 y nos quedamos con la parte entera, así 1+1=1
     return result
 
+def _nand(a, b):
+    return 1 - (a * b)
+
 def generador_de_tabla_de_verdad(operacion):
     print("A | B | Resultado")
     print("--|---|----------")
@@ -16,11 +19,23 @@ def generador_de_tabla_de_verdad(operacion):
             1: _and(A, B),      #1=AND
             2: _or(A, B),       #2=OR
             3: (A, B),      #3=XOR
-            4: not(A and B),    #4=NAND
-            5: not(A or B)      #5=NOR
+            4: _nand(A, B),    #4=NAND
+            5: not(A or B),      #5=NOR
+            #6: NOT
             }
             resultado = operaciones[operacion]
             print(f"{A} | {B} |    {resultado}")
     return
 
-generador_de_tabla_de_verdad(2)   #Acá iría la opcion elegida por el usuario
+#Programa principal:
+opcion = int(input("""
+Ingresa la opción deseada:
+1: AND
+2: OR
+3: XOR
+4: NAND
+5: NOR
+6: NOT
+"""))
+
+generador_de_tabla_de_verdad(opcion)
