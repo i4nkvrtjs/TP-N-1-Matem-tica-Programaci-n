@@ -7,6 +7,9 @@ def _or(a, b):
         result = result//2          #dividimos por 2 y nos quedamos con la parte entera, así 1+1=1
     return result
 
+def _xor(a, b):
+    return int(bool(a) != bool(b))      #A xor B: devuelve 1(verdadero) si  a≠b
+
 def _nand(a, b):
     #Multiplicación hace lo mismo que la operación AND
     #Luego 1 - (a * b) invierte el resultado: si el resultado es 1, será 0. Si es 0, será 1
@@ -30,7 +33,7 @@ def generador_de_tabla_de_verdad(operacion):
                 operaciones = {
                     1: _and(A, B),      #1=AND
                     2: _or(A, B),       #2=OR
-                    3: A ^ B,           #3=XOR
+                    3: _xor(A, B),      #3=XOR
                     4: _nand(A, B),     #4=NAND
                     5: not(A or B)      #5=NOR
                 }
