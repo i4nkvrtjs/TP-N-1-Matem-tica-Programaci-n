@@ -41,8 +41,7 @@ def generador_de_tabla_de_verdad(operacion):
                     2: _or(A, B),       #2=OR
                     3: _xor(A, B),      #3=XOR
                     4: _nand(A, B),     #4=NAND
-                    5: _nor(A, B),      #5=NOR
-                    6: _not(A),         #6=NOT
+                    5: _nor(A, B),      #5=NOR3
                 }
                 resultado = operaciones[operacion]
                 print(f"{A} | {B} |    {resultado}")
