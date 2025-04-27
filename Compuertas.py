@@ -15,15 +15,12 @@ def _nand(a, b):
     #Luego 1 - (a * b) invierte el resultado: si el resultado es 1, será 0. Si es 0, será 1
     return 1 - (a * b)
 
-<<<<<<< HEAD
 def _nor(a, b):
     suma = int(bool(a)) + int(bool(b))
     if suma > 1:
         suma = 1  # Porque 1+1 tiene que seguir siendo 1
     return 1 - suma
 
-=======
->>>>>>> 4e4e6cbd46d790f09e44216a67613035ee52302a
 def _not(a):
     return 1 - int(bool(a))         #NOT A = 1 - A: inversion matematica (si A = 1 -> 0, si A = 0 -> 1)
 
@@ -44,7 +41,7 @@ def generador_de_tabla_de_verdad(operacion):
                     2: _or(A, B),       #2=OR
                     3: _xor(A, B),      #3=XOR
                     4: _nand(A, B),     #4=NAND
-                    5: not(A or B)      #5=NOR
+                    5: _nor(A, B)          #5=NOR
                 }
                 resultado = operaciones[operacion]
                 print(f"{A} | {B} |    {resultado}")
